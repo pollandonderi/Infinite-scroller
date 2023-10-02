@@ -1,0 +1,40 @@
+ $primary-color: hsl(217, 33%, 17%);
+ $li-color:hsl(218, 33%, 9%);
+
+
+body{
+    background-color: $primary-color !important;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+} 
+.tag-list{
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+    li{
+        list-style-type: none;
+        background-color:$li-color ;
+        padding: 1em 2em;
+        color: beige;
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px 2px rgba(255, 255, 255, 0.39);
+    }
+}
+.scroller{
+    max-width: 600px;
+    outline: 3px solid red;
+    overflow: hidden;
+}
+.scroller-inner{
+    padding-block: 1em;
+}
+.scroller[data-animated =true]{
+    overflow: hidden;
+    -webkit-mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    mask: linear-gradient(90deg,transparent, white 20%, white 80%, transparent);
+}
+.scroller[data-animated =true] .scroller-inner{
+    flex-wrap: nowrap;
+}

@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { InfinitescrollComponent } from './infinitescroll/infinitescroll.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path:"",
+    component:InfinitescrollComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
