@@ -16,8 +16,17 @@ if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
 function addAnimation(){
   scrollers.forEach(scroller => {
     scroller.setAttribute('data-animated', true.toString());
+    const scrollerInner = scroller.querySelector('.scroller-inner');
+    const scrollerContent = Array.from(scrollerInner!.children)
+    scrollerContent.forEach(
+      item =>{
+        const duplicatedItem = item.cloneNode(true) as Element;
+        
+        duplicatedItem.setAttribute("aria-hidden", "true")
+        scrollerInner?.appendChild(duplicatedItem)
+      }
+    )
   })
-}
-  
+} 
  }
 }
